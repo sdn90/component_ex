@@ -1,22 +1,15 @@
 defmodule Table do
   use ComponentEx.Component
 
+  @spec render(map) :: Phoenix.HTML.safe
   def render(props) do
-    headers =
-      Enum.map(props[:headers], fn(header) ->
-        ~E"<th><%= header %></th>"
-      end)
-
-    ~E"""
-    <table>
-      <thead>
-        <%= headers %>
-      </thead>
-      <tbody>
-      <%= props.children %>
-      </tbody>
-    </table>
-    """
-
+    tag :table do
+      tag :thead do
+        Enum.map(props.headers, fn(header) ->
+          content_tag :th, header
+        end)
+      end
+    end
   end
+
 end

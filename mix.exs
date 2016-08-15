@@ -8,7 +8,10 @@ defmodule ComponentEx.Mixfile do
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps(),
-     elixirc_paths: ["lib", "examples"]]
+     elixirc_paths: ["lib", "examples"],
+     source_url: "https://github.com/sdn90/component_ex",
+     docs: [extras: ["README.md"]]]
+
   end
 
   # Configuration for the OTP application
@@ -28,6 +31,7 @@ defmodule ComponentEx.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    [{:phoenix_html, "~> 2.6.2"}]
+    [{:phoenix_html, "~> 2.6.2"},
+     {:ex_doc, "~> 0.12", only: :dev}]
   end
 end

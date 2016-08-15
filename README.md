@@ -1,24 +1,21 @@
-# ComponentEx - WIP: Don't use
+> WIP: Currently unstable and NOT following Semver. Use at your own risk.
 
-**TODO: Add description**
+# ComponentEx
+A pattern for creating static UI components for Phoenix.
 
-## Installation
+## Why Components?
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
+**Reusability**  
+By breaking down a UI into smaller generic components, you can drastically reduce 
+the amount of markup you have to write without sacrificing flexbility.
 
-  1. Add `component_ex` to your list of dependencies in `mix.exs`:
+**Easy to test**  
+Since components are just functions that return HTML, you can easily test
+them without the need to render entire pages. You can use a library such as
+[Floki](https://github.com/philss/floki) to parse the HTML using CSS selectors.
 
-    ```elixir
-    def deps do
-      [{:component_ex, "~> 0.1.0"}]
-    end
-    ```
-
-  2. Ensure `component_ex` is started before your application:
-
-    ```elixir
-    def application do
-      [applications: [:component_ex]]
-    end
-    ```
-
+## TODO
+- [ ] Generators
+- [ ] Inline style support?
+- [ ] Testing utilities
+- [ ] Document patterns (higher order components)

@@ -6,7 +6,6 @@ defmodule ComponentEx.Component do
     quote do
       @behaviour ComponentEx.Component
       use Phoenix.HTML
-
       alias ComponentEx.Style
     end
 
